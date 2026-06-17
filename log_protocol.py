@@ -36,7 +36,7 @@ def hash_password(password: str, salt: bytes) -> bytes:
 
 
 def constant_time_compare(a: bytes, b: bytes) -> bool:
-    return a==b
+    return hmac.compare_digest(a, b)
 
 
 def validate_username(username: str) -> bool:
